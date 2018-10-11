@@ -1,0 +1,31 @@
+{
+  "name": "messager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mashelll/Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mashelll/Frontend/issues"
+  },
+  "homepage": "https://github.com/mashelll/Frontend#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "webpack": "^4.20.2"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^17.1.0"
+  }
+}
