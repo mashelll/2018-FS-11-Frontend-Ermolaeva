@@ -1,15 +1,5 @@
-/*const path = require('path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
-  }
-};*/
-
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: { main: './src/index.js' },
@@ -28,21 +18,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
+        use: ExtractTextPlugin.extract(
           {
-            loader: 'mini-css-extract-plugin',
-            options: {
-              publicPath: '../'
-            }
+            fallback: 'style-loader',
+            use: ['css-loader'],
           },
-          "css-loader"
-        ]
-       
+        ),
       },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'style.css' }),
+    new ExtractTextPlugin({ filename: 'style.css' }),
   ],
 };
 

@@ -1,10 +1,5 @@
 div{
-    /*background: LightCyan;
-    width: 200px;
-    height: 100px;
-    position: absolute;*/
-    color: crimson;
-    background: lightskyblue;
+    background: LightCyan;
     overflow: fragments;
     position: absolute;
 }
