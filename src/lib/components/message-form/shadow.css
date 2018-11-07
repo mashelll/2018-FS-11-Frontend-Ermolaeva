@@ -52,5 +52,6 @@ input[type=file] {
     cursor: pointer;
     position: absolute;
     bottom: 0%;
-    right: 7%;;
+    right: 7%;
+    background: url(../images/clip.png);
 }

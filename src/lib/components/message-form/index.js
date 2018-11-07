@@ -10,8 +10,7 @@ const template = `
 			<span slot="icon"></span>
 		</form-input>
         	<input type="submit" value="Отправить">
-		<input type="file">
-  	</form>
+		<input type="file" name="file">
 `;
 
 class MessageForm extends HTMLElement {
