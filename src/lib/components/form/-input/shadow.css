@@ -1,0 +1,12 @@
+input {
+	width: 71.1%;
+	height: 42.9%;
+	border: 0;
+	outline: none;
+	background-color: #f2f2f2;
+}
+
+:host {
+	display: inline-block;
+	border: 1px solid rgba(25, 25, 25, 0.32);
+}

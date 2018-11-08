@@ -1,0 +1,57 @@
+form-input {
+	width: 100%;
+    height: 8.8%;
+    padding: 12px 25px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    position: absolute;
+    bottom: 0%;
+}
+
+
+
+.result {
+	width: 53.3%;
+    height: 3%;
+    color: black;
+    font-size: 110%;
+    border-radius: 8px;
+    background-color: mediumorchid;
+    padding: 15px;
+    position: absolute;
+    top: 81.5%;
+    right: 2.2%;
+}
+
+input[type=submit] {
+	width: 7%;
+    height: 7%;
+    background-color: darkmagenta;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0%;
+    left: 93%;
+}
+
+input[type=file] {
+	width: 6.66667%;
+    height: 3.75%;
+    background-color: darkmagenta;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0%;
+    right: 7%;
+    background: url(../images/clip.png);
+}
