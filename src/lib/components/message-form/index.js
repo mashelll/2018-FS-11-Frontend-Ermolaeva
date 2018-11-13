@@ -9,8 +9,8 @@ const template = `
 		<form-input name="message_text" placeholder="Cообщение" slot="message-input">
 			<span slot="icon"></span>
 		</form-input>
-        	<input type="submit" value="Отправить">
 		<input type="file" name="file">
+	</form>
 `;
 
 class MessageForm extends HTMLElement {
@@ -24,7 +24,12 @@ class MessageForm extends HTMLElement {
       localStorage.setItem('.result', '');
     }
     this._elements.message.innerText = ``;
+    //navigator.geolocation.getCurrentPosition(completion_function(position))
   }
+
+  /*completion_function = funtion(position) {
+     alert('Последний раз вас засекали здесь: ' + position.coords.latitude + ", " + position.coords.longitude);
+  }*/
 
   static get observedAttributes() {
     return [
@@ -53,11 +58,11 @@ class MessageForm extends HTMLElement {
   }
 
   _onSubmit (event) {
-    const result = Array.from(this._elements.form.elements).map(el => el.value);
+    const result = Array.from(this._elements.form.elements).map(el => el.value); //? создает массив из свойств объекта this._elements.form.elements?
     this._elements.message.innerText = result[0];
     localStorage.setItem('.result', result[0]);
-    event.preventDefault();
-    return false;
+    event.preventDefault(); //?
+    return false; //?
   }
 
   _onKeyPress (event) {
