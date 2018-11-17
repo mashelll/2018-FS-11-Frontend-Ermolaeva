@@ -5,11 +5,9 @@ const slotName = 'message-input';
 const template = `
 	<style>${shadowStyles.toString()}</style>
 	<form>
-		<div class="result"></div>
 		<form-input name="message_text" placeholder="Cообщение" slot="message-input">
 			<span slot="icon"></span>
 		</form-input>
-		<input type="file" name="file">
 	</form>
 `;
 
@@ -44,6 +42,7 @@ class MessageForm extends HTMLElement {
 
   _initElements () {
     var form = this.shadowRoot.querySelector('form');
+    //var message = this.shadowRoot.querySelector('div');
     var message = this.shadowRoot.querySelector('.result');
     this._elements = {
       form: form,
@@ -58,12 +57,19 @@ class MessageForm extends HTMLElement {
   }
 
   _onSubmit (event) {
-    const result = Array.from(this._elements.form.elements).map(el => el.value); //? создает массив из свойств объекта this._elements.form.elements?
-    this._elements.message.innerText = result[0];
+    const result = Array.from(this._elements.form.elements).map(el => el.value);
+    this._elements.form.reset();
+    //this._elements.form.message_text.innerText = '';
+    if (!result[0]) return;
+    var newMessage = document.createElement('div');
+    newMessage.classList.add('result');
+    this._elements.form.appendChild(newMessage);
+    newMessage.innerText = result[0];
     localStorage.setItem('.result', result[0]);
-    event.preventDefault(); //?
-    return false; //?
+    event.preventDefault();
+    return false;
   }
+
 
   _onKeyPress (event) {
     if (event.keyCode === 13) {

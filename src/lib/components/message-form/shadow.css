@@ -13,17 +13,42 @@ form-input {
 
 
 .result {
-	width: 53.3%;
+	width: 48%;
     height: 3%;
     color: black;
     font-size: 110%;
     border-radius: 8px;
     background-color: mediumorchid;
     padding: 15px;
-    position: absolute;
+    position: relative;
     top: 81.5%;
-    right: 2.2%;
+    left: 50%;
 }
+
+.result1 {
+	width: 48%;
+    height: 3%;
+    color: black;
+    font-size: 110%;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    background-color: mediumorchid;
+    padding: 15px;
+    position: relative;
+    top: 85%;
+    left: 50%;
+}
+/*
+width: 30%;
+    height: 3.5%;
+    color: black;
+    margin-bottom: 5px;
+	font-size: 110%;
+	border-radius: 8px;
+    background-color: mediumorchid;
+    padding: 15px;
+    position: relative;
+left: 68%;
 
 /*input[type=submit] {
 	width: 7%;
