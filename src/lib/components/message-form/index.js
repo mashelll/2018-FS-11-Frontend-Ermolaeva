@@ -42,7 +42,6 @@ class MessageForm extends HTMLElement {
 
   _initElements () {
     var form = this.shadowRoot.querySelector('form');
-    //var message = this.shadowRoot.querySelector('div');
     var message = this.shadowRoot.querySelector('.result');
     this._elements = {
       form: form,
