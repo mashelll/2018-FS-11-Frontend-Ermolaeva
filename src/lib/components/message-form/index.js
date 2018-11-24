@@ -5,12 +5,10 @@ const slotName = 'message-input';
 const template = `
 	<style>${shadowStyles.toString()}</style>
 	<form>
-		<div class="result"></div>
 		<form-input name="message_text" placeholder="Cообщение" slot="message-input">
 			<span slot="icon"></span>
 		</form-input>
-        	<input type="submit" value="Отправить">
-		<input type="file" name="file">
+	</form>
 `;
 
 class MessageForm extends HTMLElement {
@@ -24,7 +22,12 @@ class MessageForm extends HTMLElement {
       localStorage.setItem('.result', '');
     }
     this._elements.message.innerText = ``;
+    //navigator.geolocation.getCurrentPosition(completion_function(position))
   }
+
+  /*completion_function = funtion(position) {
+     alert('Последний раз вас засекали здесь: ' + position.coords.latitude + ", " + position.coords.longitude);
+  }*/
 
   static get observedAttributes() {
     return [
@@ -54,11 +57,18 @@ class MessageForm extends HTMLElement {
 
   _onSubmit (event) {
     const result = Array.from(this._elements.form.elements).map(el => el.value);
-    this._elements.message.innerText = result[0];
+    this._elements.form.reset();
+    //this._elements.form.message_text.innerText = '';
+    if (!result[0]) return;
+    var newMessage = document.createElement('div');
+    newMessage.classList.add('result');
+    this._elements.form.appendChild(newMessage);
+    newMessage.innerText = result[0];
     localStorage.setItem('.result', result[0]);
     event.preventDefault();
     return false;
   }
+
 
   _onKeyPress (event) {
     if (event.keyCode === 13) {

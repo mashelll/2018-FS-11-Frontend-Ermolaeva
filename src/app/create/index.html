@@ -5,20 +5,9 @@
 	<title></title>
 </head>
 <body>
-    
+    	<script src="../../src/utils/getReadableSize.js"></script>
 	<message-form action="/"></message-form>
-	<script> 
-		function getReadableSize(size) {
-			var n = 0;
-			var arrayOfSizes = new Array("", "kb", "Мb", "Gb", "Tb");
-			while (size >= 1024) { 
-				n++;
-				size /= 1024;
-			}
-			size = Math.round(size) + arrayOfSizes[n];
-			return size;
-		}
-		alert('10000='+getReadableSize(10000));
-	</script>
 </body>
+<footer>
+</footer>
 </html>
